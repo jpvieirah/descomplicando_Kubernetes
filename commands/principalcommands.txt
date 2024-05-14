@@ -10,3 +10,12 @@ kubectl run -ti busybox --image busybox
 kubectl attach alpine -c alpine -ti
 kubectl exec -ti strigus -- bash
 kubectl exec strigus -- cat /usr/share/nginx/html/index.html
+kubectl describe pod meu-pod
+kubectl run meupod --image alpine --dry-run=client
+kubectl run meupod --image alpine --dry-run=client -o yaml
+kubectl run meupod --image alpine --dry-run=client -o yaml > pod.yaml
+kubectl apply -f pod.yaml 
+k get pods -w
+kubectl logs meupod
+kubectl logs meupod -f (prende a requisição no log)
+kubectl logs meupod -c nome do container
