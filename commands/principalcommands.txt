@@ -1,0 +1,12 @@
+kubectl run strigus --image nginx --port 80
+kubectl get pods
+kubectl get nodes
+kubectl get services ou svc
+kubectl get pods -o wide
+kubectl get pods namedopod -o yaml
+k get nodes
+k delete pods name do pod 
+kubectl run -ti busybox --image busybox
+kubectl attach alpine -c alpine -ti
+kubectl exec -ti strigus -- bash
+kubectl exec strigus -- cat /usr/share/nginx/html/index.html
