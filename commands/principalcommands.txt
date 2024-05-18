@@ -19,3 +19,11 @@ k get pods -w
 kubectl logs meupod
 kubectl logs meupod -f (prende a requisição no log)
 kubectl logs meupod -c nome do container
+kubectl apply -f poddeployment.yaml
+    9  kubectl get deployments
+   10  kubectl get deployments.apps
+   11  kubectl get pods
+   12  kubectl get deployments.apps -o yaml
+   13  kubectl get pods -l app=nginx-deployment
+   14  kubectl get replicasets
+
