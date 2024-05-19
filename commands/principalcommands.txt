@@ -26,4 +26,10 @@ kubectl apply -f poddeployment.yaml
    12  kubectl get deployments.apps -o yaml
    13  kubectl get pods -l app=nginx-deployment
    14  kubectl get replicasets
+:%s/nginx-deployment/nginx-deployment2/g   -> comando vim para subistituir tuddo que chama nginx-deployment por nginx-deployment2
+   41  k create deployment --image nginx --replicas 3 nginx-deployment
+   42  k delete deploy nginx-deployment
+   43  k create deployment --image nginx --replicas 3 nginx-deployment --dry-run=client
+   44  k create deployment --image nginx --replicas 3 nginx-deployment --dry-run=client -o yaml
+   45  k create deployment --image nginx --replicas 3 nginx-deployment --dry-run=client -o yaml > novo-deployment.yaml
 
