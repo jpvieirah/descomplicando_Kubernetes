@@ -32,4 +32,16 @@ kubectl apply -f poddeployment.yaml
    43  k create deployment --image nginx --replicas 3 nginx-deployment --dry-run=client
    44  k create deployment --image nginx --replicas 3 nginx-deployment --dry-run=client -o yaml
    45  k create deployment --image nginx --replicas 3 nginx-deployment --dry-run=client -o yaml > novo-deployment.yaml
-
+   78  k create namespace giropops --dry-run=client -o yaml
+   79  k create namespace giropops --dry-run=client -o yaml > namespace.yaml
+   80  ls
+   81  vim namespace.yaml
+   82  k delete namespace giropops
+   83  k apply -f namespace.yaml
+   84  k get namespace
+ 153  vim poddeployment.yaml
+  154  k apply -f poddeployment.yaml
+  155  k get pods -n giropops
+  156  k exec -ti -n giropops nginx-deployment-6bdbcc759b-6c64v -- nginx -v
+  157  k exec -ti -n giropops nginx-deployment-666b4bc98f-28ngl -- nginx -v
+kubectl rollout status deploy -n giropops nginx-deployment
