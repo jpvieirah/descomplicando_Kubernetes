@@ -45,3 +45,15 @@ kubectl apply -f poddeployment.yaml
   156  k exec -ti -n giropops nginx-deployment-6bdbcc759b-6c64v -- nginx -v
   157  k exec -ti -n giropops nginx-deployment-666b4bc98f-28ngl -- nginx -v
 kubectl rollout status deploy -n giropops nginx-deployment
+k rollout undo deployment -n giropops nginx-deployment
+k rollout history deployment -n giropops nginx-deployment
+k rollout history deployment -n giropops nginx-deployment --revision numero da revision ex 7
+kubectl rollout history deployment nginx-deployment
+
+kubectl rollout restart deployment nginx-deployment
+
+kubectl rollout resume deployment nginx-deployment
+
+kubectl rollout pause deployment nginx-deployment
+
+kubectl rollout undo deployment nginx-deployment --to-revision=1 
